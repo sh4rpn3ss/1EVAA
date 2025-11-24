@@ -3,11 +3,11 @@ package org.example;
 import java.util.List;
 import java.util.Scanner;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
 
-        cumple_repository REPO = new cumple_repository();
+        Cumple_repository REPO = new Cumple_repository();
         Scanner SC = new Scanner(System.in);
         boolean SALIR = false;
 
@@ -27,12 +27,12 @@ public class main {
             switch (opcion) {
 
                 case "1":
-                    List<cumple_agenda> lista = REPO.GetLista();
+                    List<Cumple_agenda> lista = REPO.getLista();
                     if (lista.isEmpty()) {
                         System.out.println("Vacío.");
                     } else {
-                        for (cumple_agenda c : lista) {
-                            System.out.println(c.GetNombre() + ": " + c.GetDia() + "/" + c.GetMes());
+                        for (Cumple_agenda c : lista) {
+                            System.out.println(c.getNombre() + ": " + c.getDia() + "/" + c.getMes());
                         }
                     }
                     break;
@@ -40,13 +40,13 @@ public class main {
                 case "2":
                     System.out.print("Día: ");
                     int DIA = Integer.parseInt(SC.nextLine());
-                    List<cumple_agenda> porDia = REPO.BuscarPorDia(DIA);
+                    List<Cumple_agenda> porDia = REPO.buscarPorDia(DIA);
 
                     if (porDia.isEmpty()) {
                         System.out.println("Sin resultados.");
                     } else {
-                        for (cumple_agenda c : porDia) {
-                            System.out.println(c.GetNombre() + ": " + c.GetDia() + "/" + c.GetMes());
+                        for (Cumple_agenda c : porDia) {
+                            System.out.println(c.getNombre() + ": " + c.getDia() + "/" + c.getMes());
                         }
                     }
                     break;
@@ -54,13 +54,13 @@ public class main {
                 case "3":
                     System.out.print("Nombre: ");
                     String NOMBRE_BUSCAR = SC.nextLine();
-                    cumple_agenda encontrado = REPO.BuscarPorNombre(NOMBRE_BUSCAR);
+                    Cumple_agenda encontrado = REPO.buscarPorNombre(NOMBRE_BUSCAR);
 
                     if (encontrado == null) {
                         System.out.println("No encontrado.");
                     } else {
-                        System.out.println(encontrado.GetNombre() + ": " +
-                                encontrado.GetDia() + "/" + encontrado.GetMes());
+                        System.out.println(encontrado.getNombre() + ": " +
+                                encontrado.getDia() + "/" + encontrado.getMes());
                     }
                     break;
 
@@ -72,13 +72,13 @@ public class main {
                     System.out.print("Mes: ");
                     int M = Integer.parseInt(SC.nextLine());
 
-                    REPO.AddCumple(new cumple_agenda(NOMBRE, D, M));
+                    REPO.addCumple(new Cumple_agenda(NOMBRE, D, M));
                     break;
 
                 case "5":
                     System.out.print("Nombre a eliminar: ");
                     String NOMBRE_ELIM = SC.nextLine();
-                    REPO.EliminarPorNombre(NOMBRE_ELIM);
+                    REPO.eliminarPorNombre(NOMBRE_ELIM);
                     break;
 
                 case "6":
