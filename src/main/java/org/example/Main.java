@@ -1,5 +1,10 @@
 package org.example;
-
+/**
+ * menu
+ *
+ * @author sh4rpn3ss
+ * @version 1.0
+ */
 import java.util.List;
 import java.util.Scanner;
 

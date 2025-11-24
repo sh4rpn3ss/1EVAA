@@ -1,5 +1,10 @@
 package org.example;
-
+/**
+ * constantes
+ *
+ * @author sh4rpn3ss
+ * @version 1.0
+ */
 public final class constantes {
             public static final String AGENDA = "\n=== AGENDA ===";
             public static final String LISTAR = "1. Listar";
